@@ -1,7 +1,7 @@
 resource "aws_instance" "terraform" {
     count = length(var.instance_name)
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t2.micro"
+    ami = var.ami_id
+    instance_type = var.environment == "dev" ? "t2.micro" : "t3.nano"
     vpc_security_group_ids = [aws_security_group.allow_ssh.id]
     # tags = {
     #     Name = var.instance_name[count.index]
