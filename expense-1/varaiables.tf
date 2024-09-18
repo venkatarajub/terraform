@@ -1,20 +1,20 @@
-variable "instance_name" {
+variable "instance_names" {
     type = list(string)
-    default = ["mysql", "backend", "frontend"]
+    default = ["mysql", "backend", "frontend"] 
 }
 
 variable "ami_id" {
     default = "ami-09c813fb71547fc4f"
 }
 
-variable environment {
+variable "envorinment" {
     default = "dev"
 }
 
-variable "common_tags" {
-    default = {
+variable "commam_tags" {
+    default =  {
         project = "expense"
-        terraform = "true"
+        terraform = true
     }
 }
 
@@ -23,5 +23,5 @@ variable "zone_id" {
 }
 
 variable "domain_name" {
-    default = "vensa.online"
+    default =  "vensa.online"
 }
